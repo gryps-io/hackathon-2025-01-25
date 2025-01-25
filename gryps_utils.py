@@ -54,7 +54,7 @@ class IMSQueryHandler:
 
     def query(self, query: str, database: str):
         return wr.athena.read_sql_query(
-            query, database=database, boto3_session=self.base_session
+            query, database=database, boto3_session=self.base_session, ctas_approach=False, workgroup="AmazonAthenaLakeFormation"
         )
 
 
